@@ -70,7 +70,7 @@ git log --oneline --graph
 ```
 
 -----------------------------------------------------
-# CHAPTER02: Reset, Diff, Unindex, Update-index and basic working with remote
+# CHAPTER02: Reset, Diff, Unindex, Update-index and basic working with remote(1)
 
 ## Reset
 - Unstage change using reset
@@ -136,3 +136,47 @@ $ git merge origin/next
 ```
 
 -------------------------------------
+# CHAPTER03: basic working with remote(2), Branching and merge
+
+## Cloning
+ 1. Download to local dir
+ 2. Add `origin` remote pointing to clone URL
+ 3. Initial branch master and HEAD
+
+ - `git clone <https://remoteUrl/repo-name.git>` Clones a project to local directory using repository name(default)
+
+ - `git clone <https://remoteUrl/repo-name.git> localnamedir` Clones a project to specific local directory
+
+## Branching
+
+ - Create branch and checkout
+```
+git branch feature1
+git checkout feature1
+```
+
+is the same as `git checkout -b feature1`
+
+ - Merge branch 
+```
+git checkout master
+git merge feature1
+```
+
+    + Fast-forward merge
+        ++ By default when no change in current branch, git will merge by fast-forward method.
+    + Non-fast-forward merge
+        ++ `Recursive stratrgy`: If changes were made in both branches
+        ++ Config force non-fast-forward merge<Optional>
+
+## vi commands
+```
+`j` Down     `k`up    `ESC` leave mode  `:wq` save & quit
+`h` left     `l`right `i` insert mode   `:q!` cancle & quit
+```
+
+ - Delete branch
+    + `git branch -d <branch name>` delete only when already merging  
+    + `git branch -D <branch name>` always delete the branch
+
+--------------------------------------------------------------
