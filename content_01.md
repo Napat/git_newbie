@@ -180,3 +180,35 @@ git merge feature1
     + `git branch -D <branch name>` always delete the branch
 
 --------------------------------------------------------------
+# CHAPTER04: Basic Collaboration
+git work flow: Dev work only on master branch
+
+```
+*Senario1*
+A: push
+B: clone
+A&B: edit (different code segments)
+A:push
+B:push ----> !! error, rejected
+B: pull (fetch & merge--> Git work flow: merge commit strategy)
+B: push
+```
+
+```
+*Senario2*
+A: push
+B: clone
+A&B: edit (same code segments)
+A:push
+B:push ----> !! error, rejected
+B: pull (fetch & merge) ----> !! content Conflict 
+B: git status
+    & see conflict files 
+    & talk to A 
+    & manual fixed conflict
+B: git commit -a -m "Fixed conflict bla bla..."
+B: push
+```
+
+--------------------------------------------------------------
+
