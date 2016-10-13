@@ -274,4 +274,29 @@ To push news tags
 `git push --tags`
 
 --------------------------------------------------------------
+# CHAPTER06: rebase
+Tag: Git work flow, Rebase strategy
 
+- Rebase do three things
+    1. Move all current working branch changes(commits) to temporary area.
+    2. Apply all base branch commits to working branch.
+    3. Apply all commits from temporary area one at a time.
+
+ - Rebase conflict commands
+    + When resolved issue then continue with commands
+        ```
+        git status
+        git add <resolve files>
+        git rebase --continue
+        ```
+
+    + If prefer to skip this patch(skip only this commit)
+        ```
+        git rebase --skip
+        ```
+    + To abort the rebase process
+        ```
+        git rebase --abort
+        ```
+
+--------------------------------------------------------------
