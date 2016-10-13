@@ -211,4 +211,67 @@ B: push
 ```
 
 --------------------------------------------------------------
+# CHAPTER05: remote branch & tags
+keyword: stale tracking branches issue
+
+Push local branch to remote
+`git push origin <feature01>`
+
+To see all remote branches
+```
+# Need to sync with remote
+git pull
+git branch -r
+git checkout <feature01>
+```
+
+Or (prefered)
+```
+# No need to sync with remote
+git remote show origin
+```
+
+ - Remove a remote branch
+    + `git push origin :<branchName>`
+    or 
+    + `git push origin --delete <branchName>`
+
+Note that other dev that already sync deleted branch will have **stale tracking branches** issue.
+To clean local reference(origin) with deleted remote branchs then using
+## remote prune
+`git remote prune origin`
+
+*Senario5.1*
+```
+A&B: git pull origin feature01
+A: git push origin --delete feature01
+B: new commit & git push ----!!! Everything up-to-date (stale tracking branches)
+B: git remote show origin ----(see stale remote branches)
+B: git remote prune origin
+```
+
+To track different local branch name to remote branch name
+`git push origin <localBranch>:<remoteBranch>`
+
+Ex: push staging branch to master
+```
+git checkout staging
+git push heroku-staging staging:master
+```
+
+Tagging (reference to a commit used mostly for release versioning)
+
+List all tags
+`git tag`
+
+Checkout to any tag
+`git checkout <tagName>`
+
+To add a new tag
+`git tag -a <tagName> -m "Comment about this tag"`
+
+To push news tags
+`git push --tags`
+
+--------------------------------------------------------------
 
