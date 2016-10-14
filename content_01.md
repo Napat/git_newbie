@@ -395,5 +395,45 @@ git config --global alias.ci commit
 
 ```
 
+--------------------------------------------------------------
+# Collaborate strategy(Git work flow): Rebase and No-Fast-forward strategy
+- Developers work only on master branch(no strategy)
+    + Bad practice, only for very beginner
+- Merge commit strategy
+    + Still for noob, messy log graph
+- Rebase strategy
+    + Simple log graph
+- No-Fast-forward strategy
+    + Easy to checkout history when have bug
+    + Note: Dev still need to smaller the task to fast-feedback collaboration 
+
+## No-Fast-forward strategy setup
+
+```
+# Config no fast-forward when merge the master branch
+git config branch.master.mergeoptions  "--no-ff"
+# or stop using no fast forward for all merging by  
+git config --global --add merge.ff false
+
+# Fixed git pull(fetch & merge) to be fetch & rebase 
+git config --global pull.rebase true
+
+# Short summary
+cd <.git repository>
+git config branch.master.mergeoptions "--no-ff"
+git config --global pull.rebase true
+
+```
+
+# Things to do EVERY morning
+```
+git checkout master
+git pull origin master
+git checkout <branch_dev>
+git rebase master
+```
+
+# Before go home
+ - Please push any commits and resources that other developers may use for new release.
 
 --------------------------------------------------------------
