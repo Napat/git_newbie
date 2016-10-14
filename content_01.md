@@ -300,3 +300,100 @@ Tag: Git work flow, Rebase strategy
         ```
 
 --------------------------------------------------------------
+# CHAPTER07: history, log, diff, blame, gitignore file, explicit repository excludes, Aliases
+Info: `git help log`
+
+## Git log
+```
+git log
+git log --graph
+git log --pretty=oneline
+git log --oneline
+git log --graph --oneline
+```
+
+ - Log patch(diff) using `-p`
+    + `git log --oneline -p`
+
+ - Log ranges By latest commits
+    + `git log -3`
+
+ - Log ranges By time
+    + `git log --until=1.minute.ago`
+    + `git log --since=1.day.ago`
+    + `git log --since=1.hour.ago`
+    + `git log --since=1.month.ago --until=2.weeks.ago`
+    + `git log --since=2010-01-01 --until=2011-12-31`
+
+ - Log format 
+    + `git log --pretty-format:"%h %ad- %s [%an]"`
+
+```
+Placeholder     Replace with
+%ad             author date
+%an             author name
+%h              SHA hash
+%s              subject
+%d              ref names
+```
+
+ - Log stat(line change) using `--stat` 
+    + `git log --oneline --stat`
+
+## Git diff
+```
+git diff              # same as git diff HEAD
+git diff HEAD^
+git diff HEAD^^ HEAD^
+git diff HEAD~2 HEAD~1
+git diff HEAD~2 HEAD -- main.c  # show only diff of main.c file
+
+git diff f5abca ed189a
+
+git diff master feature01
+
+git diff --since=1.week.ago --until=1.minute.ago
+```
+
+Note `--` use to tell git the following argument is file name
+
+## Git blame
+ - To see the commits that change any files
+    + `git blame main.c --date short`
+
+## Git ignore
+ - Excluding from all copies of cloning by add the rules to `.gitignore` file.
+Need to add .gitignore file to the repository.
+
+## Explicit repository excludes
+- If you don't want to create a `.gitignore` file to share with others, 
+you can create rules that are not committed with the repository 
+by write the exclude list into `.git/info/exclude`
+No need to add .gitignore file to the repository.
+
+## Aliases
+
+```
+# git mylog
+git config --global alias.mylog "log --pretty=format: '%h %s [%an]' --graph"
+
+# git lol
+git config --global alias.lol \
+"log --graph --decorate --pretty=oneline --abbrex-commit -all"
+
+# git st
+git config --global alias.st status
+
+# git co
+git config --global alias.co checkout
+
+# git br
+git config --global alias.br branch
+
+# git ci
+git config --global alias.ci commit
+
+```
+
+
+--------------------------------------------------------------
