@@ -415,6 +415,15 @@ git config --global alias.ci commit
 
 ```
 
+```
+# git config
+[alias]
+search = log --no-merges -i -E --pretty='%h (%ad) - [%an] %s %d' --date=format:'%b %d %Y' --grep
+
+# To use search
+$ git search "pattern"
+```
+
 --------------------------------------------------------------
 # Collaborate strategy(Git work flow): Rebase and No-Fast-forward strategy
 - Developers work only on master branch(no strategy)
