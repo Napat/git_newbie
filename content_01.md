@@ -2,7 +2,7 @@
 --------------------------------------------------------------
 # CHAPTER01: Version control & git setup & git config & status of staging 
 Old story
-- No time capsule (Time log and history tracking)
+- No time capsule snapshot(Time log and history tracking)
 - Collaboration issues(i.e. Editing same source code, multi-tasking)
 
 Version control systems
