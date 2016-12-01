@@ -11,7 +11,27 @@ Version control systems
 - Distributed Repository[Distributed version controlsystem: DVCS]
  + Support both Online(remote) and Offline(local) repository committing 
 
-First, setup configuration for global/local repositories
+First to know, Git configuration can select write locate by 4 options,
+`--system`, `--global`, `--local` and `--file <filename>`.
+
+`--system`: To save config for entire system that will use for all user.
+ + Config path is `/etc/gitconfig`
+
+`--global`: To save git config for our user level. 
+ + Config path is `~/.gitconfig`(or `~/.config/git/config`) file
+
+`--local`: By default, git config will save new config value to the repository local configuration file.
+ + Config path is `<project dir>/.git/config`.
+
+`--file <filename>`: Use to create or write config to any specific path. 
+
+The first place Git looks for the values is `system` level, the next is `global` level. 
+Finally, Git looks for configuration values in `local`(project) level.
+
+Note that, 
+`system` values will replace by `global` values. `global` values will replace by `local` values. 
+
+For example to setup configuration for global/local repositories
 ```
 # To set global config
 git config --global username "Bumble Bee"
