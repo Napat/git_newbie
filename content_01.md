@@ -481,3 +481,34 @@ git rebase master
  - Please push any commits and resources that other developers may use for new release.
 
 --------------------------------------------------------------
+# Merging Two(or more) Git Repositories Into One Repository Without Losing File History
+
+```
+# 1.Create a new empty repository New
+mkdir newrepo
+cd newrepo
+git init   
+
+# 2.Make a dummy commit because we need to have  an initial commmit before we do a merge.
+touch dummy.txt
+git add .
+git commit -m "Init dummy commit"
+
+# 3.Add a oldProjA remote and fetch the old repo to new branch
+git remote add -f oldProjA <oldProjA repo URL>
+git checkout oldProjA/master
+git checkout -b editOldProjA
+
+# 4.Move projectA's objects to new dir to prevent merge conflict with other project
+mkdir <projADir>
+git mv <all projA files and folder> <projADir>
+git commit -m "Move projA to new dir"
+
+# 5.merge projA to master branch using unrelated histories option
+git checkout master
+git merge --allow-unrelated-histories newb_proA
+
+# Do the same approach(3-5) to other repository
+#...
+
+```
