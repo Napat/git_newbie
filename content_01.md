@@ -11,25 +11,30 @@ Version control systems
 - Distributed Repository[Distributed version controlsystem: DVCS]
  + Support both Online(remote) and Offline(local) repository committing 
 
-First to know, Git configuration can select write locate by 4 options,
+## First to know, Git config
+
+Git configuration use to keep many config like developer's name, email, status coloring, diff, tools, alias commands and more.
+When executing, git then look for config at 3 levels location.
+There are 4 options to select config write location,
 `--system`, `--global`, `--local` and `--file <filename>`.
 
-`--system`: To save config for entire system that will use for all user.
- + Config path is `/etc/gitconfig`
+`git config --system`: Write config for entire system(all users/projects).
+ + Config stored in `/etc/gitconfig`
 
-`--global`: To save git config for our user level. 
- + Config path is `~/.gitconfig`(or `~/.config/git/config`) file
+`git config --global`: Write config for all projects for current user. 
+ + Config stored in `~/.gitconfig`(or `~/.config/git/config`) file
 
-`--local`: By default, git config will save new config value to the repository local configuration file.
- + Config path is `<project dir>/.git/config`.
+`git config` or `git config --local`: By default, git config values are writed to current project config file.
+ + Config stored in `<project dir>/.git/config`.
 
-`--file <filename>`: Use to create or write config to any specific path. 
+`git config --file <filename>`: There is optional write config to any specific path, maybe to use when replace export linux's env to non-standard values. See Somehack belows.
 
 The first place Git looks for the values is `system` level, the next is `global` level. 
 Finally, Git looks for configuration values in `local`(project) level.
+** project overrides global and global overrides system. **
 
-Note that, 
-`system` values will replace by `global` values. `global` values will replace by `local` values. 
+Some hack:
+We can also point the environment variable `GIT_CONFIG` to a file that git config should use. With `GIT_CONFIG=~/.gitconfig-A git config key value` the specified file gets manipulated.
 
 For example to setup configuration for global/local repositories
 ```
@@ -52,6 +57,14 @@ git config --list
 # To verify running config of any repository
 git config user.email  
 
+```
+
+Useful config to set color of git status
+```
+[color "status"]  
+  added = green bold  
+  changed = yellow bold  
+  untracked = red bold
 ```
 
 Create new git repository
@@ -419,9 +432,11 @@ git config --global alias.ci commit
 # git config
 [alias]
 search = log --no-merges -i -E --pretty='%h (%ad) - [%an] %s %d' --date=format:'%b %d %Y' --grep
+vgrep = grep --extended-regexp --break --heading --line-number
 
 # To use search
 $ git search "pattern"
+$ git grep "pattern"
 ```
 
 --------------------------------------------------------------
