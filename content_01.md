@@ -5,6 +5,9 @@ Old story
 - No time capsule snapshot(Time log and history tracking)
 - Collaboration issues(i.e. Editing same source code, multi-tasking)
 
+![alt tag](img/old_story.jpg)
+
+
 Version control systems
 - Central Repository
  + Online(remote) repo only (i.e. subversion)
