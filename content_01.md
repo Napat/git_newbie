@@ -14,6 +14,8 @@ Version control systems
 - Distributed Repository[Distributed version controlsystem: DVCS]
  + Support both Online(remote) and Offline(local) repository committing 
 
+![alt tag](img/what_version_control_graph_looklike.jpg)
+
 ## First to know, Git config
 
 Git configuration use to keep many config like developer's name, email, status coloring, diff, tools, alias commands and more.
@@ -465,7 +467,7 @@ $ git grep "pattern"
     + Easy to checkout history when buggy
 ![alt tag](img/gitflow03_noFastForward.jpg)    
     + Note: Dev still need to smaller the task to be fast-feedback collaboration 
-![alt tag](img/gitflow04_slowFeedbackProb.jpg)
+![alt tag](img/gitflow03_2_slowFeedbackProb.jpg)
 
 ## No-Fast-forward strategy setup
 
