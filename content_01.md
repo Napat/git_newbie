@@ -226,7 +226,7 @@ B: clone
 A&B: edit (different code segments)
 A:push
 B:push ----> !! error, rejected
-B: pull (fetch & merge--> Git work flow: merge commit strategy)
+B: pull (using: fetch & merge--> Git work flow: merge commit strategy)
 B: push
 ```
 
@@ -237,7 +237,7 @@ B: clone
 A&B: edit (same code segments)
 A:push
 B:push ----> !! error, rejected
-B: pull (fetch & merge) ----> !! content Conflict 
+B: pull (using: fetch & merge) ----> !! content Conflict 
 B: git status
     & see conflict files 
     & talk to A 
@@ -245,6 +245,10 @@ B: git status
 B: git commit -a -m "Fixed conflict bla bla..."
 B: push
 ```
+
+- Merge commit strategy
+Log graph then looks something like
+![alt tag](img/gitflow01_onlyBranch.jpg)
 
 --------------------------------------------------------------
 # CHAPTER05: remote branch & tags
@@ -312,6 +316,8 @@ To push news tags
 --------------------------------------------------------------
 # CHAPTER06: rebase
 Tag: Git work flow, Rebase strategy
+
+![alt tag](img/gitflow02_withRebase.jpg)
 
 - Rebase do three things
     1. Move all current working branch changes(commits) to temporary area.
@@ -444,15 +450,22 @@ $ git grep "pattern"
 
 --------------------------------------------------------------
 # Collaborate strategy(Git work flow): Rebase and No-Fast-forward strategy
-- Developers work only on master branch(no strategy)
+- Developers work only on master branch(and no strategy)
     + Bad practice, only for very beginner
+    
 - Merge commit strategy
     + Still for noob, messy log graph
+![alt tag](img/gitflow01_onlyBranch.jpg)    
+    
 - Rebase strategy
     + Simple log graph
+![alt tag](img/gitflow02_withRebase.jpg)
+
 - No-Fast-forward strategy
-    + Easy to checkout history when have bug
-    + Note: Dev still need to smaller the task to fast-feedback collaboration 
+    + Easy to checkout history when buggy
+![alt tag](img/gitflow03_noFastForward.jpg)    
+    + Note: Dev still need to smaller the task to be fast-feedback collaboration 
+![alt tag](img/gitflow04_slowFeedbackProb.jpg)
 
 ## No-Fast-forward strategy setup
 
@@ -460,15 +473,15 @@ $ git grep "pattern"
 # Config no fast-forward when merge the master branch
 git config branch.master.mergeoptions  "--no-ff"
 # or stop using no fast forward for all merging by  
-git config --global --add merge.ff false
+git config --add merge.ff false
 
 # Fixed git pull(fetch & merge) to be fetch & rebase 
-git config --global pull.rebase true
+git config pull.rebase true
 
 # Short summary
 cd <.git repository>
 git config branch.master.mergeoptions "--no-ff"
-git config --global pull.rebase true
+git config pull.rebase true
 
 ```
 
