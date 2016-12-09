@@ -1,3 +1,5 @@
+Sublime packages
+ - https://github.com/jisaacks/GitGutter
 
 --------------------------------------------------------------
 # CHAPTER01: Version control & git setup & git config & status of staging 
