@@ -110,7 +110,7 @@ git log --oneline --graph
 ```
 
 -----------------------------------------------------
-# CHAPTER02: Reset, Diff, Unindex, Update-index and basic working with remote(1)
+# CHAPTER02: Reset, Diff, Unstage,Unindex, Update-index and basic working with remote(1)
 
 ## Reset
 - Unstage change using reset
@@ -121,6 +121,7 @@ git log --oneline --graph
 - Undoing a commmit using reset to the snapshot **Note: Don't do these after you push**
  + `git reset --hard HEAD^` Undo last commit and all changes
  + `git reset --soft HEAD^` Reset changes into staging
+ + `git reset HEAD <file>...` To unstage file
  
 - Edit last commit(new commit message or add something) **Note: Whatever has been staged is added to last commit**
  ```
