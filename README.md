@@ -1,3 +1,3 @@
 # git_for_newbie
 
-Resource for git newbies.
+Resources of git newbies training.
