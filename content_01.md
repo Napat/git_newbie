@@ -255,6 +255,10 @@ B: push
 Log graph then looks something like
 ![alt tag](img/gitflow01_onlyBranch.jpg)
 
+## Avoiding Git Disasters ## 
+Merging may feels like tons of pain when there are tons of changes long time no sync.
+![alt tag](img/merging_feels_like.gif) 
+
 --------------------------------------------------------------
 # CHAPTER05: remote branch & tags
 keyword: stale tracking branches issue
