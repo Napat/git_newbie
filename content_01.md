@@ -11,7 +11,7 @@ Old story
 
 
 Version control systems
-- Central Repository
+- Central Repository (Repository what??)
  + Online(remote) repo only (i.e. subversion)
 - Distributed Repository[Distributed version controlsystem: DVCS]
  + Support both Online(remote) and Offline(local) repository committing 
