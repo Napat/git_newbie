@@ -537,3 +537,21 @@ git merge --allow-unrelated-histories newb_proA
 #...
 
 ```
+
+--------------------------------------------------------------
+# Patch Linux Kernel
+After create new branch(patch_branch) and commit source code with [Sign-off requirement](http://stackoverflow.com/questions/1962094/what-is-the-sign-off-feature-in-git-for)
+
+### Create xxx.patch, similar to diff of master & patch_branch
+`git format-patch master..patch_branch`
+
+### To check xxx.patch using kernel script
+`<linuxkernel>/scripts/checkpatch.pl xxx.patch`
+
+### Get linux kernel patch maintainer email
+`<linuxkernel>/scripts/get_maintainer.pl xxx.patch`
+
+### Send email by git
+`git send-email --to xxx@xxx.com *.patch`
+
+--------------------------------------------------------------
