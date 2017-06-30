@@ -511,6 +511,35 @@ git rebase master
  - Please push any commits and resources that other developers may use for new release.
 
 --------------------------------------------------------------
+# Collaborate, command for reviwer to see diff between feature and mainline branch  
+
+ref: `https://stackoverflow.com/questions/20808892/git-diff-between-current-branch-and-master-but-not-including-unmerged-master-com`
+
+When reviewer need to see change between feature and mainline, they can use  "git diff" with hash of base commit. There are some easy way to fine that bash hash,   
+Let's say our feature branch name is `feature1` that branching from `master` branch. We can get hash of `branch point` by using erge-base,   
+
+```
+git merge-base feature1 master
+fba7c14598a3e36f7a4ee0b956b68d21d64c195d
+```
+
+So, to get all change of `feature1` with `branch point` we can use,
+
+```
+# To diff feature1 against basis
+git diff `git merge-base feature1 master`..feature1
+
+# or
+git diff $(git merge-base feature1 master)..feature1
+
+# or 
+git diff $(git merge-base --fork-point master dev)..dev
+
+# or if current branch is already on feature1
+git diff `git merge-base feature1 master`
+```
+
+--------------------------------------------------------------
 # Merging Two(or more) Git Repositories Into One Repository Without Losing File History
 
 ```
@@ -545,9 +574,10 @@ git merge --allow-unrelated-histories newb_proA
 
 --------------------------------------------------------------
 ## Some hack: How to set .git directory to different path with source code
+
 `ref: http://stackoverflow.com/questions/17913550/git-moving-the-git-directory-to-another-drive-keep-the-source-code-where-it`
 
-Options
+Options   
 1. Use `symlink`(linux) or `junction.exe`(windows)
 2. Clone with option --separate-git-dir
 `git clone --separate-git-dir=<path to directory for repo> <remote url> <path for working copy>`
