@@ -85,7 +85,7 @@ git init
 # Folder .git is created after git init command
 ls -a | grep .git
 drwxrwxrwx 2 root root     0 Jun 30 18:09 .git
-  
+
 ```
 
 ## Git staging status
@@ -541,6 +541,28 @@ git merge --allow-unrelated-histories newb_proA
 # Do the same approach(3-5) to other repository
 #...
 
+```
+
+--------------------------------------------------------------
+## Some hack: How to set .git directory to different path with source code
+`ref: http://stackoverflow.com/questions/17913550/git-moving-the-git-directory-to-another-drive-keep-the-source-code-where-it`
+
+Options
+1. Use `symlink`(linux) or `junction.exe`(windows)
+2. Clone with option --separate-git-dir
+`git clone --separate-git-dir=<path to directory for repo> <remote url> <path for working copy>`
+3. Set up using `--git-dir=<path>` and `--work-tree=<path>`
+4. Using same approach with submodules
+    4.1 Move .git directory to where it need to be(ex: `~/googledrive/.git`).   
+    4.2 Create .git file with value: `gitdir: ~/googledrive/.git`
+    4.3 Define core.worktree to point at the working space
+
+```
+# Option 4 example
+cd ~/workspace/project_foo
+mv .git ~/googledrive/.git
+echo "gitdir: ~/googledrive/.git" > .git
+git config core.worktree $PWD
 ```
 
 --------------------------------------------------------------
