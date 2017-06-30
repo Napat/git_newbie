@@ -565,6 +565,9 @@ echo "gitdir: ~/googledrive/.git" > .git
 git config core.worktree $PWD
 ```
 
+Note:   
+Imagin when you move .git to cloud storage directory that will automatic backup files and folder, now you may sync your repository with out remote server, but this is not recommended by me, it's just for fun. :P 
+
 --------------------------------------------------------------
 # Patch Linux Kernel
 After create new branch(patch_branch) and commit source code with [Sign-off requirement](http://stackoverflow.com/questions/1962094/what-is-the-sign-off-feature-in-git-for)
