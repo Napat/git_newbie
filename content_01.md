@@ -81,6 +81,11 @@ cd trygit
 
 # Creates a new local repository
 git init
+
+# Folder .git is created after git init command
+ls -a | grep .git
+drwxrwxrwx 2 root root     0 Jun 30 18:09 .git
+  
 ```
 
 ## Git staging status
