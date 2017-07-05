@@ -575,7 +575,10 @@ git merge --allow-unrelated-histories newb_proA
 --------------------------------------------------------------
 ## Some hack: How to set .git directory to different path with source code
 
-`ref: http://stackoverflow.com/questions/17913550/git-moving-the-git-directory-to-another-drive-keep-the-source-code-where-it`
+```
+Ref: 
+ > http://stackoverflow.com/questions/17913550/git-moving-the-git-directory-to-another-drive-keep-the-source-code-where-it
+```
 
 Options   
 1. Use `symlink`(linux) or `junction.exe`(windows)
@@ -615,3 +618,29 @@ After create new branch(patch_branch) and commit source code with [Sign-off requ
 `git send-email --to xxx@xxx.com *.patch`
 
 --------------------------------------------------------------
+
+# Get url to direct access raw file on github and use it as CDN(Content Delivery Network)   
+
+```
+Ref 
+ > https://stackoverflow.com/questions/8779197/linking-files-directly-from-github   
+```
+
+1. Get the raw url of file from github, for example   
+`https://raw.githubusercontent.com/Napat/git_newbie/master/README.md`   
+
+2. There are many options to generate the url,   
+
+2.1 Visit `https://gitcdn.link/` This link will auto get/update the latest version of file and no damage from high traffic volumes.   
+output: `https://gitcdn.link/repo/Napat/git_newbie/master/README.md`
+
+2.2 Visit `https://min.gitcdn.link/` This link give you the option of auto minifying your html, css and javascript.   
+output: `https://min.gitcdn.link/repo/Napat/git_newbie/master/README.md`
+
+2.3 Visit `https://rawgit.com/`    
+output:   
+production `https://cdn.rawgit.com/Napat/git_newbie/master/README.md`   
+development `https://rawgit.com/Napat/git_newbie/master/README.md`   
+
+--------------------------------------------------------------
+
