@@ -626,6 +626,8 @@ Ref
 - https://stackoverflow.com/questions/8779197/linking-files-directly-from-github   
 ```
 
+Because default raw url of github repository may limite file size and bandwidth so to use it as CDN you need some trick shown below, 
+
 1. Get the raw url of file from github, for example   
 `https://raw.githubusercontent.com/Napat/git_newbie/master/README.md`   
 
@@ -641,6 +643,10 @@ Ref
     output:   
     production `https://cdn.rawgit.com/Napat/git_newbie/master/README.md`   
     development `https://rawgit.com/Napat/git_newbie/master/README.md`   
+
+You can use output link in many situations for example,
+- Create your own CDN.
+- Direct link to any web library such as js, css that available in github without donwload to your workspace.
 
 --------------------------------------------------------------
 
