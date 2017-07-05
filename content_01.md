@@ -631,16 +631,16 @@ Ref
 
 2. There are many options to generate the url,   
 
-2.1 Visit `https://gitcdn.link/` This link will auto get/update the latest version of file and no damage from high traffic volumes.   
-output: `https://gitcdn.link/repo/Napat/git_newbie/master/README.md`
+    2.1 Visit `https://gitcdn.link/` This link will auto get/update the latest version of file and no damage from high traffic volumes.   
+    output: `https://gitcdn.link/repo/Napat/git_newbie/master/README.md`
 
-2.2 Visit `https://min.gitcdn.link/` This link give you the option of auto minifying your html, css and javascript.   
-output: `https://min.gitcdn.link/repo/Napat/git_newbie/master/README.md`
+    2.2 Visit `https://min.gitcdn.link/` This link give you the option of auto minifying your html, css and javascript.   
+    output: `https://min.gitcdn.link/repo/Napat/git_newbie/master/README.md`
 
-2.3 Visit `https://rawgit.com/`    
-output:   
-production `https://cdn.rawgit.com/Napat/git_newbie/master/README.md`   
-development `https://rawgit.com/Napat/git_newbie/master/README.md`   
+    2.3 Visit `https://rawgit.com/`    
+    output:   
+    production `https://cdn.rawgit.com/Napat/git_newbie/master/README.md`   
+    development `https://rawgit.com/Napat/git_newbie/master/README.md`   
 
 --------------------------------------------------------------
 
