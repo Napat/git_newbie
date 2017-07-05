@@ -577,7 +577,7 @@ git merge --allow-unrelated-histories newb_proA
 
 ```
 Ref: 
- > http://stackoverflow.com/questions/17913550/git-moving-the-git-directory-to-another-drive-keep-the-source-code-where-it
+- http://stackoverflow.com/questions/17913550/git-moving-the-git-directory-to-another-drive-keep-the-source-code-where-it
 ```
 
 Options   
@@ -623,7 +623,7 @@ After create new branch(patch_branch) and commit source code with [Sign-off requ
 
 ```
 Ref 
- > https://stackoverflow.com/questions/8779197/linking-files-directly-from-github   
+- https://stackoverflow.com/questions/8779197/linking-files-directly-from-github   
 ```
 
 1. Get the raw url of file from github, for example   
