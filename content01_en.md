@@ -1,13 +1,16 @@
 # Sublime packages
 - [GitGutter](https://github.com/jisaacks/GitGutter) 
-
+  
 # Graphical git client   
 - [GitKraken](https://www.gitkraken.com/) Windows/Linux/OSX. Free for personal and small startup.   
 - [SmartGit](http://www.syntevo.com/smartgit/) Windows/Linux/OSX. Free if being used for private projects not meant to be profitable and not an open source license.     
 - [SourceTree](https://www.sourcetreeapp.com/) Windows/OSX. Free Git client.  
 - [TortoiseGit](https://tortoisegit.org/) Windows. Free Git client familiar with TortoiseSVN. 
 - [GithubDesktop](https://desktop.github.com/) Windows/OSX. Free and easy to use especially for git novices but not for geek.    
-
+  
+# Useful
+- [GitIgnoreIO](https://www.gitignore.io/) To create .gitignore files for your project.  
+  
 --------------------------------------------------------------
 # CHAPTER01: Version control & git setup & git config & status of staging 
 Old story
