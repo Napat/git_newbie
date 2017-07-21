@@ -125,7 +125,23 @@ git log --oneline --graph
 ```
 
 -----------------------------------------------------
-# CHAPTER02: Reset, Diff, Unstage,Unindex, Update-index and basic working with remote(1)
+# CHAPTER02: head, HEAD, Reset, Diff, Unstage,Unindex, Update-index and basic working with remote(1)
+
+## head
+A head is simply a reference to a commit object. 
+Each head has a name (branch name or tag name, etc). 
+By default, there is a head in every repository called master. 
+A repository can contain any number of heads.
+## HEAD
+HEAD(all capitals head) is the exclusive head to reference to the current position. 
+To see what HEAD points to by doing
+```
+$ cat .git/HEAD
+ref: ref/heads/master
+```
+### Detached HEAD
+It is possible for HEAD to refer to a specific revision that is not associated with a branch name. 
+This situation is called a [detached HEAD](https://git-scm.com/docs/git-checkout#_detached_head).
 
 ## Reset
 - Unstage change using reset
