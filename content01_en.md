@@ -9,7 +9,7 @@
 - [GithubDesktop](https://desktop.github.com/) Windows/OSX. Free and easy to use especially for git novices but not for geek.    
   
 # Browser Extension
-- [Octotree](https://github.com/buunguyen/octotree) 
+- [Octotree](https://github.com/buunguyen/octotree) Browser extension (Chrome, Firefox, Opera and Safari) to show a code tree on GitHub.  
   
 # Useful
 - [GitIgnoreIO](https://www.gitignore.io/) To create .gitignore files for your project.  
