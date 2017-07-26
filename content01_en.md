@@ -8,6 +8,9 @@
 - [TortoiseGit](https://tortoisegit.org/) Windows. Free Git client familiar with TortoiseSVN. 
 - [GithubDesktop](https://desktop.github.com/) Windows/OSX. Free and easy to use especially for git novices but not for geek.    
   
+# Browser Extension
+- [Octotree](https://github.com/buunguyen/octotree) 
+  
 # Useful
 - [GitIgnoreIO](https://www.gitignore.io/) To create .gitignore files for your project.  
   
