@@ -162,6 +162,10 @@ This situation is called a [detached HEAD](https://git-scm.com/docs/git-checkout
  git add somethingToLastCommit.txt
  git commit --amend -m "The new commit message"
  ```
+- Change author and Email of last commit 
+```
+git commit --amend --author="NewFirstname NewLastname <NewEmail@domain>"
+```
 
 - Discard changes in working(unstage)
  + `git checkout -- <file>` 
