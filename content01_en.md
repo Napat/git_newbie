@@ -119,7 +119,39 @@ drwxrwxrwx 2 root root     0 Jun 30 18:09 .git
 ## Commit
 `git commit` Take snapshot of those staging
  + `-a` Automatic add changes from all tracked files
- + `-m` to comment, **Use present tense comment**
+ + `-m` to comment, **Use present tense comment**  
+
+### Basic commit
+```
+git commit -a -m "some message"
+```
+
+### Using commit template: communication/collabolation/documentation
+1. Create `commit_msg_template.txt` template  
+```
+$ cat commit_msg_template.txt
+# Some awesome title (concise, ideally in 50 characters or fewer)
+
+# Body (bug/issue tracking no/feature description)
+
+# Documentation/ Notes
+
+```
+
+2. Set project template  
+```
+$ cd <project_dir>
+$ cp </path/of/commit_msg_template.txt> commit_msg_template.txt
+$ git add commit_msg_template.txt
+$ git config commit.template commit_msg_template.txt
+$ git commit 
+```
+
+3. Check setting
+```
+$ cat .gitconfig | grep template 
+template = commit_msg_template.txt
+```
 
 ## Basic Log
 ```
