@@ -714,4 +714,32 @@ You can use output link in many situations for example,
 - Direct link to any web library such as js, css that available in github without donwload to your workspace.
 
 --------------------------------------------------------------
+  
+# Update change at upstream repository to your own github forked repository  
+  
+[[Scenario]] 
+A few day later after forked github project to your github account and cloned to your local machine, another change was made at origin project.
+Now, you want to apply that change to your github repository.  
+  
+```
+# 1. Add upstream repo
+git remote add upstream https://github.com/whosupstream/whatproject.git
 
+# 2. Fetch all branches of upstream into tracking branches
+git fetch upstream
+
+# 3. Go to your main branch that you want to apply the change
+git checkout master
+
+# 4. Rebase main branch with upstream 
+git rebase upstream/master
+
+# 5. Push to your github project
+# You may need to unprotected master branches in some git's server.
+# Github Project: Settings > Branches > See "Protexted branches" section
+git push origin master
+
+```  
+    
+--------------------------------------------------------------
+  
