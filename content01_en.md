@@ -763,4 +763,14 @@ Or, in pure Markdown, but losing the image sizing and border:
 
 --------------------------------------------------------------
   
+# Checklist in markdown   
+
+* [x] List01: feature 001
+* [x] List02: feature 002
+* [x] List03: feature 003
+* [x] List04: feature 004
+* [ ] List05: issue 001
+* [ ] List06: feature 005
+  
+--------------------------------------------------------------  
   
