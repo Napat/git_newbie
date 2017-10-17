@@ -14,6 +14,9 @@
 # Useful
 - [GitIgnoreIO](https://www.gitignore.io/) To create .gitignore files for your project.  
   
+# Github hotkey  
+- `t`: push `t` when open target repository website then ypu can type any text to search for any file on that repository.  
+  
 --------------------------------------------------------------
 # CHAPTER01: Version control & git setup & git config & status of staging 
 Old story
