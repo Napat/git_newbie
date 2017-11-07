@@ -1,6 +1,9 @@
 # Sublime packages
 - [GitGutter](https://github.com/jisaacks/GitGutter) 
   
+# PowerShell  
+ - [posh-git: Git-Autocomplete for PowerShell](https://github.com/dahlbyk/posh-git)  
+
 # Graphical git client   
 - [GitKraken](https://www.gitkraken.com/) Windows/Linux/OSX. Free for personal and small startup.   
 - [SmartGit](http://www.syntevo.com/smartgit/) Windows/Linux/OSX. Free if being used for private projects not meant to be profitable and not an open source license.     
