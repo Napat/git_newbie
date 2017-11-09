@@ -231,7 +231,9 @@ git commit --amend --author="NewFirstname NewLastname <NewEmail@domain>"
  - `git remote add origin <remote addr>`
 
 ## Show remote
- - `git remote -v`
+ - `git remote -v`  
+ - `git remote show`  
+ - `git remote show origin`  
 
 ## Push local to remote
  - `git push -u <remote name> <local branch name to push>`
@@ -532,6 +534,58 @@ vgrep = grep --extended-regexp --break --heading --line-number
 $ git search "pattern"
 $ git grep "pattern"
 ```
+
+--------------------------------------------------------------
+# CHAPTER08: Create bare git repository  
+
+### Basic concept of repository  
+There are two git repository types       
+1. Repository for working (can changes source code)  
+2. Repository of sharing (cannot changes any source code): **usually on a remote server**  
+  
+### Repository for working       
+Normally, by using `git init` command at the top level we can create working repository. After that we will find two things at the top dir,    
+1. A .git subfolder with all the git related revision history of your repo  
+2. A working tree(source code), or checked out copies of your project files.  
+  
+### Repository of sharing   
+There is another type of repository called `bare repo` that the structured a bit differently from woking directory, bare repos store git revision history in the root folder instead of in a .git subfolder.  
+  
+A bare repository created with `git init --bare` is for sharing/collaborating/remoting with a team or developers to push their changes to bare repo. Git is a distributed version control system so **no one will directly edit files in the shared centralized(bare) repository**. Instead developers will clone/push/pull the shared bare repo to make their changes available to other users.  
+Note that bare repo contain no working copy of any source code files but store only resources to keep revision history. 
+
+[Local repository:for working] <---ssh/http/https/ftp/.../---> [Remote/Bare repository: for sharing] 
+
+
+### To create bare repository  
+```
+Ref 
+- https://stackoverflow.com/questions/3242282/how-to-configure-an-existing-git-repo-to-be-shared-by-a-unix-group  
+```
+  
+Server   
+ - IP Address: 192.168.10.85  
+ - SSH: enable  
+ - Git workspace: /project/GitRepositories  
+ - Project name: example_project  
+ - My user: napat
+ - Linux group for user to access bare repo: git_group
+```
+$ ssh://my_account@192.168.10.85
+$ cd /project/GitRepositories
+$ mkdir example_project.git
+$ chown napat:git_group switch.git 
+$ chown napat:git_group -R ./*
+$
+$ chgrp -R git_group example_project.git            # set the group
+$ chmod -R g+rw example_project.git                 # allow the group to read/write
+$ chmod g+s `find example_project.git -type d`      # new files get group id of directory
+$
+$ cd my_project.git
+$ git init --bare --share 
+$ 
+```
+
 
 --------------------------------------------------------------
 # Collaborate strategy(Git work flow): Rebase and No-Fast-forward strategy
