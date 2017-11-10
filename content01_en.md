@@ -586,6 +586,42 @@ $ git init --bare --share
 $ 
 ```
 
+--------------------------------------------------------------
+# Dropbox bare repository  
+```
+Ref 
+ - https://github.com/anishathalye/git-remote-dropbox
+```
+
+1. Open [link](https://www.dropbox.com/developers/apps), Create "Dropbox API app folder" and generate an "OAuth2 token"  
+
+2. Save "OAuth2 token" to `~/.config/git/git-remote-dropbox.json` with pattern,  
+```
+{
+    "default": "ReplaceThisStringToYourOAuth2Token"
+}
+```
+
+3. Create project and init git repository used to push to dropbox  
+```
+$ mkdir project01
+$ cd project01
+$ echo "Project for test" > README.md
+$ git init
+$ git add .
+$ git commit -m "First commit"
+```
+
+4. Add remote url (`dropbox:///folderNameToUse`) and test push to dropbox 
+```
+$ git remote add origin dropbox:///project01
+$ git push origin master 
+```
+
+Now, folder "project01", bare repository, will be created in your dropbox app folder and ready to clone with 
+
+More features:
+ - [Multiple Accounts and token inline url](https://github.com/anishathalye/git-remote-dropbox#multiple-accounts)   
 
 --------------------------------------------------------------
 # Collaborate strategy(Git work flow): Rebase and No-Fast-forward strategy
