@@ -507,8 +507,7 @@ No need to add .gitignore file to the repository.
 git config --global alias.mylog "log --pretty=format: '%h %s [%an]' --graph"
 
 # git lol
-git config --global alias.lol \
-"log --graph --decorate --pretty=oneline --abbrex-commit -all"
+git config --global alias.lol "log --graph --decorate --pretty=oneline -a"
 
 # git st
 git config --global alias.st status
