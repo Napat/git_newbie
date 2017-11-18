@@ -522,7 +522,13 @@ git config --global alias.br branch
 git config --global alias.ci commit
 
 ```
-
+  
+Some alias commands are very hard by `git config` for example, alias of `git standup`, we could manual add alias to `.git/config` by adding:  
+```
+[alias]
+        standup = !"git log --reverse --branches --since='$(if [[ "Mon" == "$(date +%a)" ]]; then echo "last friday"; else echo "yesterday"; fi)' --author=$(git config --get user.email) --format=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d' --date=local"
+```
+  
 ```
 # git config
 [alias]
@@ -533,10 +539,10 @@ vgrep = grep --extended-regexp --break --heading --line-number
 $ git search "pattern"
 $ git grep "pattern"
 ```
-
+  
 --------------------------------------------------------------
 # CHAPTER08: Create bare git repository  
-
+  
 ### Basic concept of repository  
 There are two git repository types       
 1. Repository for working (can changes source code)  
@@ -554,8 +560,8 @@ A bare repository created with `git init --bare` is for sharing/collaborating/re
 Note that bare repo contain no working copy of any source code files but store only resources to keep revision history. 
 
 [Local repository:for working] <---ssh/http/https/ftp/.../---> [Remote/Bare repository: for sharing] 
-
-
+  
+  
 ### To create bare repository  
 ```
 Ref 
