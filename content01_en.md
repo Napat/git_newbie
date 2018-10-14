@@ -875,3 +875,18 @@ Or, in pure Markdown, but losing the image sizing and border:
   
 --------------------------------------------------------------  
   
+# git submobule remove cache issue 
+
+ref: 
+```
+https://stackoverflow.com/a/35205393
+https://stackoverflow.com/a/1789374
+```
+
+TL;DR,
+If all you want is to put your submodule code into the main repository, 
+you just need to remove the submodule and re-add the files into the main repo.
+and you have to delete reference to submodule HEAD with:
+```
+git rm --cached <submodule_dir>
+```
