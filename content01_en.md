@@ -44,6 +44,8 @@ When executing, git then look for config at 3 levels location.
 There are 4 options to select config write location,
 `--system`, `--global`, `--local` and `--file <filename>`.
 
+`git config --list --show-origin`: To see shich config is set where
+
 `git config --system`: Write config for entire system(all users/projects).
  + Config stored in `/etc/gitconfig`
 
@@ -60,6 +62,13 @@ Finally, Git looks for configuration values in `local`(project) level.
 ** project overrides global and global overrides system. **
 
 Some hack:
+
+Shortcut to edit config
+```
+git config --global -e    # edit global config
+git config --local -e     # edit local config
+```
+
 We can also point the environment variable `GIT_CONFIG` to a file that git config should use. With `GIT_CONFIG=~/.gitconfig-A git config key value` the specified file gets manipulated.
 
 For example to setup configuration for global/local repositories
@@ -890,3 +899,27 @@ and you have to delete reference to submodule HEAD with:
 ```
 git rm --cached <submodule_dir>
 ```
+
+--------------------------------------------------------------
+
+# Golang: Working with private repository, ie. gitlab
+
+One shot cmd to prove of concept: `env GIT_TERMINAL_PROMPT=1 go get -insecure  gitlab.myprivate.io/napat/mylogger`
+
+## .netrc to login without prompt
+
+### github
+
+https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line
+
+### gitlab
+
+1. Create **personal_access_tokens** with Scopes at https://gitlab.myprivate.io/profile/personal_access_tokens 
+2. `echo "machine gitlab.forthrd.io login [your username] password [token from step 1.]" > ~/.netrc`
+3. Try git clone(https) or go get without `GIT_TERMINAL_PROMPT=1`
+
+### encrypt .netrc to .netrc.gpg
+
+https://jano.com.es/git/https/2018/10/02/automate-git-authentication-with-http.html
+
+--------------------------------------------------------------
