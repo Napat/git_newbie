@@ -13,6 +13,7 @@
   
 # Browser Extension
 - [Octotree](https://github.com/buunguyen/octotree) Browser extension (Chrome, Firefox, Opera and Safari) to show a code tree on GitHub.  
+- [GitHub1s](https://chrome.google.com/webstore/detail/github1s/lodjfmkfbfkpdhnhkcdcoonghhghbkhe/)
   
 # Useful
 - [GitIgnoreIO](https://www.gitignore.io/) To create .gitignore files for your project.  
