@@ -348,6 +348,18 @@ git checkout feature1
 
 is the same as `git checkout -b feature1`
 
+[Git 2.23](https://github.com/git/git/blob/master/Documentation/RelNotes/2.23.0.txt) came up with the new [git switch](https://git-scm.com/docs/git-switch) command, 
+
+#### TL;DR: git checkout vs git switch
+
+To switch from one branch to another
+
+`git checkout <branchname>` or `git switch <branchname>`
+
+To create a new branch and also switches to it
+
+`git checkout -b <new_branchname>` or `git witch -c <new_branchname>`
+
 - Merge branch
 
 ``` bash
